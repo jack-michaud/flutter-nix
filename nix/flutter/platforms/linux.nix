@@ -76,7 +76,7 @@ in
         epoxy.out
         gdk-pixbuf.out
         glib.out
-        gnome.gtk.out
+        gtk3.out
         gnome2.pango.out
         harfbuzz.out
       ];
