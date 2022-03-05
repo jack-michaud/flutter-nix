@@ -1,30 +1,6 @@
-{
-  at_spi2_core,
-  atk,
-  cairo,
-  callPackage,
-  clang,
-  cmake,
-  dbus,
-  epoxy,
-  gdk-pixbuf,
-  glib,
-  gnome,
-  gnome2,
-  gtk3,
-  harfbuzz,
-  lib,
-  libdatrie,
-  libselinux,
-  libsepol,
-  libthai,
-  libuuid,
-  libxkbcommon,
-  makeWrapper,
-  ninja,
-  pcre,
-  pkg-config,
-  xlibs,
+{ at-spi2-core, atk, cairo, callPackage, clang, cmake, dbus, epoxy, gdk-pixbuf
+, glib, gnome, gnome2, gtk3, harfbuzz, lib, libdatrie, libselinux, libsepol
+, libthai, libuuid, libxkbcommon, makeWrapper, ninja, pcre, pkg-config, xlibs,
 }:
 
 let
@@ -39,7 +15,7 @@ let
 in
 {
   packages = [
-    at_spi2_core.dev # atspi-2.pc
+    at-spi2-core.dev # atspi-2.pc
     clang
     cmake
     dbus.dev # dbus-1.pc
