@@ -1,7 +1,6 @@
 { at-spi2-core, atk, cairo, callPackage, clang, cmake, dbus, epoxy, gdk-pixbuf
 , glib, gnome, gnome2, gtk3, harfbuzz, lib, libdatrie, libselinux, libsepol
-, libthai, libuuid, libxkbcommon, makeWrapper, ninja, pcre, pkg-config, xlibs,
-}:
+, libthai, libuuid, libxkbcommon, makeWrapper, ninja, pcre, pkg-config, xorg, }:
 
 let
   inherit (lib)
@@ -30,8 +29,8 @@ in
     ninja
     pcre.dev # libpcre.pc
     pkg-config
-    xlibs.libXdmcp.dev # xdmcp.pc
-    xlibs.libXtst.out # xtst.pc
+    xorg.libXdmcp.dev # xdmcp.pc
+    xorg.libXtst.out # xtst.pc
   ];
 
   shellHook =
@@ -41,7 +40,8 @@ in
         > /dev/null
     ''
     + exportEnvVars {
-      CPATH = with xlibs; makeSearchPath "include" [
+    CPATH = with xorg;
+      makeSearchPath "include" [
         libX11.dev # X11/Xlib.h
         xorgproto # X11/X.h
       ];
